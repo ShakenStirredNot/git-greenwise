@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:image/image.dart';
@@ -7,6 +8,7 @@ import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 
 import 'classifier_category.dart';
 import 'classifier_model.dart';
+import 'label_item.dart';
 
 typedef ClassifierLabels = List<String>;
 
@@ -64,11 +66,41 @@ class Classifier {
   }
 
   static Future<ClassifierLabels> _loadLabels(String labelsFileName) async {
+    /*
     final rawLabels = await FileUtil.loadLabels(labelsFileName);
 
     // Remove the index number from the label
     final labels = rawLabels
         .map((label) => label.substring(label.indexOf(' ')).trim())
+        .toList();
+    */
+
+    /*
+      Sample item in the label text file:
+      item {
+        id: 1
+        name: "hdpe"
+        display_name: "High-density polyethylene"
+      }
+     */
+    final lines = await FileUtil.loadLabels(labelsFileName);
+
+    // Merge lines to reconstruct items.
+    final List<String> itemsStrings = [];
+    StringBuffer buffer = StringBuffer();
+    for (var line in lines) {
+      if (line.trim() == "}") {
+        buffer.writeln(line);
+        itemsStrings.add(buffer.toString());
+        buffer.clear();
+      } else {
+        buffer.writeln(line);
+      }
+    }
+
+    // Deserialize each item and extract the display names.
+    final labels = itemsStrings
+        .map((itemString) => LabelItem.fromJson(jsonDecode(itemString)).displayName)
         .toList();
 
     debugPrint('Labels: $labels');

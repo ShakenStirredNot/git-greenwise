@@ -19,8 +19,8 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.6 <4.0.0'
-  # sdk: ">=2.17.0 <3.0.0"
+  #sdk: '>=3.0.6 <4.0.0'
+  sdk: ">=2.17.0 <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -31,17 +31,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  #tflite: ^1.1.2  # For running TensorFlow Lite models
+  image_picker: ^0.8.9 # For capturing or picking images from the gallery
+  collection: ^1.17.1
+  image: ^3.3.0
   tflite_flutter: ^0.9.0 #^0.10.1  # For running TensorFlow Lite models with flutter
-  tflite_flutter_helper: ^0.3.1
-  #tflite_flutter_helper:
-    #git:
-      #url: https://github.com/filofan1/tflite_flutter_helper.git
-      #ref: 783f15e5a87126159147d8ea30b98eea9207ac70
-  image_picker: ^0.8.4+4  # For capturing or picking images from the gallery
-  collection: ^1.16.0
-  image: ^3.2.2
-  path_provider: ^2.0.5  # For accessing local directories
+  #tflite_flutter_helper: ^0.3.1
+  tflite_flutter_helper:
+    git:
+      url: https://github.com/filofan1/tflite_flutter_helper.git
+      ref: 783f15e5a87126159147d8ea30b98eea9207ac70
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -56,7 +54,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -100,5 +98,5 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
-assets:
-  - assets/
+  assets:
+    - assets/
