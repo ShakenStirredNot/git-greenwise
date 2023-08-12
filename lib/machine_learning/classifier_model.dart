@@ -1,7 +1,7 @@
-//import 'package:tflite_flutter/tflite_flutter.dart';
+import 'package:tflite_flutter/tflite_flutter.dart';
 
 class ClassifierModel {
-  //Interpreter interpreter;
+  Interpreter interpreter;
 
   List<int> inputShape;
   List<int> outputShape;
@@ -10,10 +10,11 @@ class ClassifierModel {
   TfLiteType outputType;
 
   ClassifierModel({
-    //required this.interpreter,
+    required this.interpreter,
     required this.inputShape,
     required this.outputShape,
     required this.inputType,
     required this.outputType,
   });
 }
+

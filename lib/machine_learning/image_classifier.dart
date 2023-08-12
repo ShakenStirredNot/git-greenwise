@@ -1,14 +1,10 @@
-// machine_learning/image_classifier.dart
-//  This class will perform the following steps:
-//    - Load labels and model
-//    - Preprocess image
-//    - Use the model
-//    - Postprocess the TensorFlow output
-//    - Select and build the category output
-
 import 'dart:math';
+
 import 'package:flutter/foundation.dart';
-import 'package:tflite/tflite.dart';
+import 'package:image/image.dart';
+import 'package:tflite_flutter/tflite_flutter.dart';
+import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
+
 import 'classifier_category.dart';
 import 'classifier_model.dart';
 
@@ -42,25 +38,24 @@ class Classifier {
   }
 
   static Future<ClassifierModel> _loadModel(String modelFileName) async {
-    await Tflite.loadModel(
-      model: modelFileName,
-    );
+    final interpreter = await Interpreter.fromAsset(modelFileName);
 
     // Get input and output shape from the model
-    final inputShape = Tflite.getInputTensorShape(0);
-    final outputShape = Tflite.getOutputTensorShape(0);
+    final inputShape = interpreter.getInputTensor(0).shape;
+    final outputShape = interpreter.getOutputTensor(0).shape;
 
     debugPrint('Input shape: $inputShape');
     debugPrint('Output shape: $outputShape');
 
     // Get input and output type from the model
-    final inputType = Tflite.getInputTensorType(0);
-    final outputType = Tflite.getOutputTensorType(0);
+    final inputType = interpreter.getInputTensor(0).type;
+    final outputType = interpreter.getOutputTensor(0).type;
 
     debugPrint('Input type: $inputType');
     debugPrint('Output type: $outputType');
 
     return ClassifierModel(
+      interpreter: interpreter,
       inputShape: inputShape,
       outputShape: outputShape,
       inputType: inputType,
@@ -81,19 +76,21 @@ class Classifier {
   }
 
   void close() {
-    Tflite.close();
+    _model.interpreter.close();
   }
 
-  ClassifierCategory predict(List<int> imageBytes) {
+  ClassifierCategory predict(Image image) {
     debugPrint(
-      'Image size: ${imageBytes.length} bytes',
+      'Image: ${image.width}x${image.height}, '
+          'size: ${image.length} bytes',
     );
 
-    // Convert imageBytes to Float32List for TensorFlow input
-    final inputImage = _preProcessInput(imageBytes);
+    // Load the image and convert it to TensorImage for TensorFlow Input
+    final inputImage = _preProcessInput(image);
 
     debugPrint(
-      'Pre-processed image size: ${inputImage.lengthInBytes} bytes',
+      'Pre-processed image: ${inputImage.width}x${image.height}, '
+          'size: ${inputImage.buffer.lengthInBytes} bytes',
     );
 
     // Define the output buffer
@@ -103,14 +100,7 @@ class Classifier {
     );
 
     // Run inference
-    Tflite.runModelOnBinary(
-      binary: inputImage.buffer,
-      asTyped: true,
-      inputShapes: [_model.inputShape],
-      outputShapes: [_model.outputShape],
-      inputType: _model.inputType,
-      outputType: _model.outputType,
-    );
+    _model.interpreter.run(inputImage.buffer, outputBuffer.buffer);
 
     debugPrint('OutputBuffer: ${outputBuffer.getDoubleList()}');
 
@@ -141,5 +131,32 @@ class Classifier {
     return categoryList;
   }
 
-  Float32List _preProcessInput(List<int> imageBytes) {
-    final imageTensorSize = _model.inputShape.reduce((a, b) => a
+  TensorImage _preProcessInput(Image image) {
+    // #1
+    final inputTensor = TensorImage(_model.inputType);
+    inputTensor.loadImage(image);
+
+    // #2
+    final minLength = min(inputTensor.height, inputTensor.width);
+    final cropOp = ResizeWithCropOrPadOp(minLength, minLength);
+
+    // #3
+    final shapeLength = _model.inputShape[1];
+    final resizeOp = ResizeOp(shapeLength, shapeLength, ResizeMethod.BILINEAR);
+
+    // #4
+    final normalizeOp = NormalizeOp(127.5, 127.5);
+
+    // #5
+    final imageProcessor = ImageProcessorBuilder()
+        .add(cropOp)
+        .add(resizeOp)
+        .add(normalizeOp)
+        .build();
+
+    imageProcessor.process(inputTensor);
+
+    // #6
+    return inputTensor;
+  }
+}

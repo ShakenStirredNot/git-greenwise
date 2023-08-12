@@ -20,6 +20,7 @@ version: 1.0.0+1
 
 environment:
   sdk: '>=3.0.6 <4.0.0'
+  # sdk: ">=2.17.0 <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -30,10 +31,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  tflite: ^1.1.2  # For running TensorFlow Lite models
-  #tflite_flutter: ^0.10.1  # For running TensorFlow Lite models
-  #tflite_flutter_helper: ^0.3.1
+  #tflite: ^1.1.2  # For running TensorFlow Lite models
+  tflite_flutter: ^0.9.0 #^0.10.1  # For running TensorFlow Lite models with flutter
+  tflite_flutter_helper: ^0.3.1
+  #tflite_flutter_helper:
+    #git:
+      #url: https://github.com/filofan1/tflite_flutter_helper.git
+      #ref: 783f15e5a87126159147d8ea30b98eea9207ac70
   image_picker: ^0.8.4+4  # For capturing or picking images from the gallery
+  collection: ^1.16.0
+  image: ^3.2.2
   path_provider: ^2.0.5  # For accessing local directories
 
   # The following adds the Cupertino Icons font to your application.
