@@ -66,14 +66,12 @@ class Classifier {
   }
 
   static Future<ClassifierLabels> _loadLabels(String labelsFileName) async {
-    /*
     final rawLabels = await FileUtil.loadLabels(labelsFileName);
 
     // Remove the index number from the label
     final labels = rawLabels
         .map((label) => label.substring(label.indexOf(' ')).trim())
         .toList();
-    */
 
     /*
       Sample item in the label text file:
@@ -83,6 +81,7 @@ class Classifier {
         display_name: "High-density polyethylene"
       }
      */
+    /*
     final lines = await FileUtil.loadLabels(labelsFileName);
 
     // Merge lines to reconstruct items.
@@ -102,6 +101,7 @@ class Classifier {
     final labels = itemsStrings
         .map((itemString) => LabelItem.fromJson(jsonDecode(itemString)).displayName)
         .toList();
+     */
 
     debugPrint('Labels: $labels');
     return labels;

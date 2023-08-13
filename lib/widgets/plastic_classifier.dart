@@ -7,8 +7,8 @@ import '../machine_learning/image_classifier.dart';
 import '../styles.dart';
 import 'photo_view.dart';
 
-const _modelFileName = 'assets/plastic_type_model.tflite';
-const _labelsFileName = 'assets/plastic_type_labels.txt';
+const _modelFileName = 'model_unquant.tflite';
+const _labelsFileName = 'assets/labels.txt';
 
 class PlasticClassifier extends StatefulWidget {
   const PlasticClassifier({super.key});
