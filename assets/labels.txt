@@ -1,0 +1,8 @@
+0 Polyethylene
+1 High Density Polyethylene
+2 Polyvinyl Chloride
+3 Low Density Polyethylene
+4 Polypropylene
+5 Polystyrene
+6 Other Resins
+7 Not Plastic
