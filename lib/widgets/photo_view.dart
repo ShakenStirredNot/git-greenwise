@@ -12,7 +12,7 @@ class PlasticPhotoView extends StatelessWidget {
     return Container(
       width: 250,
       height: 250,
-      color: Colors.blueGrey,
+      color: gLightGreen,
       child: (file == null)
           ? _buildEmptyView()
           : Image.file(file!, fit: BoxFit.cover),
@@ -23,7 +23,7 @@ class PlasticPhotoView extends StatelessWidget {
     return const Center(
         child: Text(
       'Please pick a photo',
-      style: kAnalyzingTextStyle,
+      style: gAnalyzingTextStyle,
     ));
   }
 }

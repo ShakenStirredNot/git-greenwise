@@ -98,5 +98,16 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
+  fonts:
+    - family: SquadaOne
+      fonts:
+        - asset: assets/SquadaOne-Regular.ttf
+    - family: ContrailOne
+      fonts:
+        - asset: assets/ContrailOne-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/Roboto-Light.ttf
+
   assets:
     - assets/
