@@ -58,7 +58,7 @@ class _PlasticClassifierState extends State<PlasticClassifier> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: kBgColor,
+      color: Colors.white,
       width: double.infinity,
       child: Column(
         mainAxisSize: MainAxisSize.max,
@@ -101,13 +101,13 @@ class _PlasticClassifierState extends State<PlasticClassifier> {
     if (!_isAnalyzing) {
       return const SizedBox.shrink();
     }
-    return const Text('Analyzing...', style: kAnalyzingTextStyle);
+    return const Text('Analyzing...', style: gAnalyzingTextStyle);
   }
 
   Widget _buildTitle() {
     return const Text(
       'Plastic Classification',
-      style: kTitleTextStyle,
+      style: gTitleTextStyle,
       textAlign: TextAlign.center,
     );
   }
@@ -121,15 +121,10 @@ class _PlasticClassifierState extends State<PlasticClassifier> {
       child: Container(
         width: 300,
         height: 50,
-        color: kColorBrown,
+        color: gLightGreen,
         child: Center(
             child: Text(title,
-                style: const TextStyle(
-                  fontFamily: kButtonFont,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w600,
-                  color: kColorLightYellow,
-                ))),
+                style: gButtonTextStyle)),
       ),
     );
   }
@@ -196,9 +191,9 @@ class _PlasticClassifierState extends State<PlasticClassifier> {
 
     return Column(
       children: [
-        Text(title, style: kResultTextStyle),
+        Text(title, style: gResultTextStyle),
         const SizedBox(height: 10),
-        Text(accuracyLabel, style: kResultRatingTextStyle)
+        Text(accuracyLabel, style: gResultRatingTextStyle)
       ],
     );
   }
