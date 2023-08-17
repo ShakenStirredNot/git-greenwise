@@ -632,7 +632,7 @@ class Home extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),  //Nav bar bg color //Navigation bar
+              ),  //Navigation bar
 
               GestureDetector(
                 onTap: () {
@@ -678,9 +678,25 @@ class Home extends StatelessWidget {
 
 
               Positioned(
+                // "Home" label
+                left: 22,
+                top: 645,
+                child: Text(
+                  'Home',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Proxima Nova',
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ), //Home label
+
+              Positioned(
                 //Home icon
                 left: 26,
-                top: 617,
+                top: 610,
                 child: Opacity(
                   opacity: 1.0,
                   child: Container(
@@ -695,8 +711,6 @@ class Home extends StatelessWidget {
                   ),
                 ),
               ), //Home icon
-
-
 
               Positioned(
                 //guide icon
