@@ -5,13 +5,12 @@ const gMainFont = 'Proxima Nova';
 const gLightGreen = Color(0xFFE8FAD3);
 
 const gTitleTextStyle = TextStyle(
-    fontFamily: gMainFont,
-    fontSize: 30.0,
-    color: Colors.black,
-    fontWeight: FontWeight.w700,
-    height: 1.20,
-    decoration: TextDecoration.none,
-);
+  fontFamily: gMainFont,
+  fontSize: 30.0,
+  color: Colors.black,
+  fontWeight: FontWeight.w700,
+  height: 1.20,
+  decoration: TextDecoration.none);
 
 const gAnalyzingTextStyle = TextStyle(
     fontFamily: gMainFont,

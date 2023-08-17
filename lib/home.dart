@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'app.dart';
 
 class HomeApp extends StatelessWidget {
   const HomeApp({super.key});
@@ -200,7 +201,7 @@ class Home extends StatelessWidget {
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
                                       image:
-                                          AssetImage('assets/home/arrow.png'),
+                                      AssetImage('assets/home/arrow.png'),
                                       fit: BoxFit.fill,
                                     ),
                                   ),
@@ -275,7 +276,7 @@ class Home extends StatelessWidget {
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
                                       image:
-                                          AssetImage('assets/home/arrow.png'),
+                                      AssetImage('assets/home/arrow.png'),
                                       fit: BoxFit.fill,
                                     ),
                                   ),
@@ -316,48 +317,47 @@ class Home extends StatelessWidget {
                 ),
               ),
 
-              Positioned(
-                // Scan button
-                left: 162,
-                top: 555,
-                child: Container(
-                  width: 80,
-                  height: 80,
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        left: 0,
-                        top: 0,
-                        child: Container(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MainApp()), // Replace MainApp with your scanning page widget
+                  );
+                },
+                child: Align(
+                  alignment: Alignment(0, 0.7), // Centered at the bottom
+                  child: Container(
+                    width: 80,
+                    height: 80,
+                    child: Stack(
+                      children: [
+                        Container(
                           width: 80,
                           height: 80,
                           decoration: ShapeDecoration(
                             color: Color(0xFF94E74A),
-                            shape: OvalBorder(),
+                            shape: CircleBorder(),
                           ),
                         ),
-                      ),
-                      Positioned(
-                        // recycle scan icon
-                        left: 17,
-                        top: 17,
-                        child: Container(
-                          width: 46,
-                          height: 46,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image:
-                                  AssetImage('assets/navbar/recycle_scan.png'),
-                              fit: BoxFit.fill,
+                        Positioned(
+                          left: 17,
+                          top: 17,
+                          child: Container(
+                            width: 46,
+                            height: 46,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/navbar/recycle_scan.png'),
+                                fit: BoxFit.fill,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
-
               Positioned(
                 //highlight homepage
                 left: 12,
