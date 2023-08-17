@@ -100,3 +100,6 @@ flutter:
 
   assets:
     - assets/
+    - assets/navbar/
+    - assets/home/
+    - assets/scan/
