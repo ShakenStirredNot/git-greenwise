@@ -44,8 +44,8 @@ class _PlasticClassifierState extends State<PlasticClassifier> {
   Future<void> _loadClassifier() async {
     debugPrint(
       'Start loading of Classifier with '
-          'labels at $_labelsFileName, '
-          'model at $_modelFileName',
+      'labels at $_labelsFileName, '
+      'model at $_modelFileName',
     );
 
     final classifier = await Classifier.loadWith(

@@ -3,8 +3,6 @@ import 'package:flutter/services.dart';
 
 import 'widgets/plastic_classifier.dart';
 
-import 'styles.dart';
-
 class MainApp extends StatelessWidget {
   const MainApp({Key? key}) : super(key: key);
 
@@ -19,18 +17,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: 'Plastic classification',
       theme: ThemeData.light(),
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: gLightGreen,
-          leading: IconButton(
-            icon: Icon(Icons.close, color: Colors.black),
-            onPressed: () {
-              Navigator.pop(context); // Close the scanning page
-            },
-          ),
-        ),
-        body: const PlasticClassifier(),
-      ),
+      home: const PlasticClassifier(),
       debugShowCheckedModeBanner: false,
     );
   }

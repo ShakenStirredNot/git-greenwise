@@ -22,8 +22,8 @@ class PlasticPhotoView extends StatelessWidget {
   Widget _buildEmptyView() {
     return const Center(
         child: Text(
-          'Please pick a photo',
-          style: gAnalyzingTextStyle,
-        ));
+      'Please pick a photo',
+      style: gAnalyzingTextStyle,
+    ));
   }
 }

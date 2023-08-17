@@ -86,7 +86,7 @@ class Scan extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              //,
+                            //,
                             ],
                           ),
                         ),
@@ -127,8 +127,8 @@ class Scan extends StatelessWidget {
                                         width: 38.59,
                                         height: 38.59,
                                         child: Stack(children: [
-                                          //,
-                                        ]),
+                                            //,
+                                            ]),
                                       ),
                                     ),
                                   ],
@@ -165,8 +165,8 @@ class Scan extends StatelessWidget {
                           width: 36,
                           height: 36,
                           child: Stack(children: [
-                            //,
-                          ]),
+                              //,
+                              ]),
                         ),
                       ),
                     ],
@@ -270,4 +270,3 @@ class Scan extends StatelessWidget {
     );
   }
 }
-
