@@ -6,8 +6,8 @@ import 'figma/scan_results.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MainApp());
-  //runApp(const HomeApp());
+  //runApp(const MainApp());
+  runApp(const HomeApp());
   //runApp(const ScanApp());
   //runApp(const ScanResultApp));
 }
