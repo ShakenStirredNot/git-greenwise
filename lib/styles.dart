@@ -10,7 +10,7 @@ const gTitleTextStyle = TextStyle(
   color: Colors.black,
   fontWeight: FontWeight.w700,
   height: 1.20,
-  decoration: TextDecoration.none,
+  decoration: TextDecoration.none);
 
 
 const gAnalyzingTextStyle = TextStyle(

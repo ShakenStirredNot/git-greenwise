@@ -26,6 +26,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+
         Container(
           width: 411,
           height: 731,
@@ -88,7 +89,7 @@ class Home extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
+              ), // Let's get recycling/welcome back
 
               Positioned(
                 //Leaf Points
@@ -125,7 +126,7 @@ class Home extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
+              ), //300
 
               Positioned(
                 //Earn & Redeem BUTTONS
@@ -289,7 +290,323 @@ class Home extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
+              ), //Earn and Redeem
+              Positioned(
+                left: 25,
+                top: 185,
+                child: SizedBox(
+                  width: 361,    //361
+                  height: 169,    //169
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        child: Container(
+                          width: 361,
+                          height: 169,
+                          decoration: ShapeDecoration(
+                            color: Color(0xFFE8FAD3),
+                            shape: RoundedRectangleBorder(
+                              side: BorderSide(width: 0.50, color: Color(0xFF94E74A)),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 70,
+                        top: 20,
+                        child: Text(
+                          'This week, you’ve recycled:',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontFamily: 'Proxima Nova',
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 53,
+                        top: 54,
+                        child: Container(
+                          width: 260,
+                          height: 57,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 5,
+                                child: Container(
+                                  width: 255,
+                                  height: 47,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        width: 47,
+                                        height: 47,
+                                        child: Stack(
+                                          children: [
+                                            Positioned(
+                                              left: 0,
+                                              top: 0,
+                                              child: Container(
+                                                width: 47,
+                                                height: 47,
+                                                decoration: ShapeDecoration(
+                                                  color: Color(0xFFFCFFFA),
+                                                  shape: OvalBorder(),
+                                                ),
+                                              ),
+                                            ),
+                                            Positioned(
+                                              left: 7,
+                                              top: 7,
+                                              child: Container(
+                                                width: 34,
+                                                height: 34,
+                                                padding: const EdgeInsets.only(
+                                                  top: 6.46,
+                                                  left: 2.12,
+                                                  right: 3.54,
+                                                  bottom: 6.46,
+                                                ),
+                                                child: Row(
+                                                  mainAxisSize: MainAxisSize.min,
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  children: [
+                                                    Container(
+                                                      width: 28.33,
+                                                      height: 21.08,
+                                                      child: Stack(children: [
+                                                        //,
+                                                      ]),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(width: 57),
+                                      Container(
+                                        width: 47,
+                                        height: 47,
+                                        child: Stack(
+                                          children: [
+                                            Positioned(
+                                              left: 0,
+                                              top: 0,
+                                              child: Container(
+                                                width: 47,
+                                                height: 47,
+                                                decoration: ShapeDecoration(
+                                                  color: Color(0xFFFCFFFA),
+                                                  shape: OvalBorder(),
+                                                ),
+                                              ),
+                                            ),
+                                            Positioned(
+                                              left: 6,
+                                              top: 6,
+                                              child: Container(
+                                                width: 35,
+                                                height: 35,
+                                                clipBehavior: Clip.antiAlias,
+                                                decoration: BoxDecoration(),
+                                                child: Stack(children: [
+                                                  //,
+                                                ]),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(width: 57),
+                                      Container(
+                                        width: 47,
+                                        height: 47,
+                                        child: Stack(
+                                          children: [
+                                            Positioned(
+                                              left: 0,
+                                              top: 0,
+                                              child: Container(
+                                                width: 47,
+                                                height: 47,
+                                                decoration: ShapeDecoration(
+                                                  color: Color(0xFFFCFFFA),
+                                                  shape: OvalBorder(),
+                                                ),
+                                              ),
+                                            ),
+                                            Positioned(
+                                              left: 7,
+                                              top: 7,
+                                              child: Container(
+                                                width: 33,
+                                                height: 33,
+                                                padding: const EdgeInsets.symmetric(horizontal: 9.17, vertical: 3.44),
+                                                child: Row(
+                                                  mainAxisSize: MainAxisSize.min,
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  children: [
+                                                    Container(
+                                                      width: 14.65,
+                                                      height: 26.12,
+                                                      child: Stack(children: [
+                                                        //,
+                                                      ]),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 215,
+                                top: 8,
+                                child: Container(
+                                  width: 35,
+                                  height: 35,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage('assets/home/metal_can_icon.png'),
+                                      fit: BoxFit.fill,
+                                      alignment: Alignment.center,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 110,
+                                top: 9,
+                                child: Container(
+                                  width: 35,
+                                  height: 35,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage('assets/home/plastic_bottle_icon.png'),
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 2,
+                                top: 9,
+                                child: Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage("assets/home/paper_icon.png"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 172,
+                        top: 115,
+                        child: Text(
+                          '5/5',
+                          style: TextStyle(
+                            color: Color(0xFF010900),
+                            fontSize: 12,
+                            fontFamily: 'Proxima Nova',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 277,
+                        top: 115,
+                        child: Text(
+                          '1/2',
+                          style: TextStyle(
+                            color: Color(0xFF010900),
+                            fontSize: 12,
+                            fontFamily: 'Proxima Nova',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 68,
+                        top: 115,
+                        child: Text(
+                          '2/5',
+                          style: TextStyle(
+                            color: Color(0xFF010900),
+                            fontSize: 12,
+                            fontFamily: 'Proxima Nova',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 48,
+                        top: 129,
+                        child: Text(
+                          'Cardboard',
+                          style: TextStyle(
+                            color: Color(0xFF010900),
+                            fontSize: 12,
+                            fontFamily: 'Proxima Nova',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 162,
+                        top: 129,
+                        child: Text(
+                          'Bottles',
+                          style: TextStyle(
+                            color: Color(0xFF010900),
+                            fontSize: 12,
+                            fontFamily: 'Proxima Nova',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 271,
+                        top: 129,
+                        child: Text(
+                          'Cans',
+                          style: TextStyle(
+                            color: Color(0xFF010900),
+                            fontSize: 12,
+                            fontFamily: 'Proxima Nova',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+
+              ), //This week
 
               ////                  NAV BAR                     ////
 
@@ -301,7 +618,7 @@ class Home extends StatelessWidget {
                   width: 405,
                   height: 87,
                   decoration: ShapeDecoration(
-                    color: Color(0xFFFCFFFB),
+                    color: Color(0xFFE8FAD3),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -315,7 +632,7 @@ class Home extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
+              ),  //Nav bar bg color //Navigation bar
 
               GestureDetector(
                 onTap: () {
@@ -358,43 +675,12 @@ class Home extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                //highlight homepage
-                left: 12,
-                top: 605,
-                child: Opacity(
-                  opacity: 0.60,
-                  child: Container(
-                    width: 68,
-                    height: 68,
-                    decoration: ShapeDecoration(
-                      color: Color(0xFFE8FAD3),
-                      shape: OvalBorder(),
-                    ),
-                  ),
-                ),
-              ),
 
-              Positioned(
-                // "Home" label
-                left: 22,
-                top: 645,
-                child: Text(
-                  'Home',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontFamily: 'Proxima Nova',
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
 
               Positioned(
                 //Home icon
                 left: 26,
-                top: 610,
+                top: 617,
                 child: Opacity(
                   opacity: 1.0,
                   child: Container(
@@ -408,7 +694,9 @@ class Home extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
+              ), //Home icon
+
+
 
               Positioned(
                 //guide icon
@@ -427,7 +715,7 @@ class Home extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
+              ), //Guide icon
 
               Positioned(
                 //map icon
@@ -446,7 +734,7 @@ class Home extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
+              ), //Map icon
 
               Positioned(
                 //redeem icon
@@ -465,10 +753,11 @@ class Home extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
+              ),  //Redeem icon
             ],
           ),
         ),
+
       ],
     );
   }
