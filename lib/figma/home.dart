@@ -20,6 +20,7 @@ class HomeApp extends StatelessWidget {
   }
 }
 
+////                  HOME PAGE                     ////
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class Home extends StatelessWidget {
       children: [
         Container(
           width: 411,
-          height: 731,
+          height: 685,
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(),
           child: Stack(
@@ -290,181 +291,513 @@ class Home extends StatelessWidget {
                 ),
               ),
 
-              ////                  NAV BAR                     ////
-
+              // WEEKLY RECYCLING PROGRESS //
               Positioned(
-                // Navbar bg
-                left: 0,
-                top: 595,
-                child: Container(
-                  width: 405,
-                  height: 87,
-                  decoration: ShapeDecoration(
-                    color: Color(0xFFFCFFFB),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    shadows: [
-                      BoxShadow(
-                        color: Color(0xFFE6E6E6),
-                        blurRadius: 30,
-                        offset: Offset(0, -1),
-                        spreadRadius: 1,
-                      )
-                    ],
-                  ),
-                ),
-              ),
-
-              Positioned(
-                // Scan button
-                left: 162,
-                top: 555,
-                child: Container(
-                  width: 80,
-                  height: 80,
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        left: 0,
-                        top: 0,
-                        child: Container(
-                          width: 80,
-                          height: 80,
-                          decoration: ShapeDecoration(
-                            color: Color(0xFF94E74A),
-                            shape: OvalBorder(),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        // recycle scan icon
-                        left: 17,
-                        top: 17,
-                        child: Container(
-                          width: 46,
-                          height: 46,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image:
-                                  AssetImage('assets/navbar/recycle_scan.png'),
-                              fit: BoxFit.fill,
+                  left: 25,
+                  top: 199,
+                  child: Container(
+                    //base bg & shape
+                    width: 361,
+                    height: 169,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: 0,
+                          top: 0,
+                          child: Container(
+                            width: 361,
+                            height: 169,
+                            decoration: ShapeDecoration(
+                              color: Color(0xFFE8FAD3),
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                    width: 0.50, color: Color(0xFF94E74A)),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
 
+                        //Text title
+                        Positioned(
+                          left: 70,
+                          top: 20,
+                          child: Text(
+                            'This week, you’ve recycled:',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18,
+                              fontFamily: 'Proxima Nova',
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+
+                        //Paper Progress
+                        Positioned(
+                          left: 51.31,
+                          top: 48,
+                          child: Container(
+                            width: 259,
+                            height: 57,
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  left: 0,
+                                  top: 0,
+                                  child: Container(
+                                    width: 50,
+                                    height: 52,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/home/paper_progress.png'),
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+
+                                // Plastic progress
+                                Positioned(
+                                  left: 100,
+                                  top: 0,
+                                  child: Container(
+                                    width: 57,
+                                    height: 57,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/home/plastic_progress.png'),
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+
+                                //Cans progress
+                                Positioned(
+                                  left: 207,
+                                  top: 0,
+                                  child: Container(
+                                    width: 52,
+                                    height: 57,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/home/cans_progress.png'),
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+
+                        // Bottles: 5/5
+                        Positioned(
+                          left: 172,
+                          top: 115,
+                          child: Text(
+                            '5/5',
+                            style: TextStyle(
+                              color: Color(0xFF010900),
+                              fontSize: 12,
+                              fontFamily: 'Proxima Nova',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+
+                        // Cans: 1/2
+                        Positioned(
+                          left: 277,
+                          top: 115,
+                          child: Text(
+                            '1/2',
+                            style: TextStyle(
+                              color: Color(0xFF010900),
+                              fontSize: 12,
+                              fontFamily: 'Proxima Nova',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+
+                        // Cardboard: 2/5
+                        Positioned(
+                          left: 68,
+                          top: 115,
+                          child: Text(
+                            '2/5',
+                            style: TextStyle(
+                              color: Color(0xFF010900),
+                              fontSize: 12,
+                              fontFamily: 'Proxima Nova',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+
+                        //Cardboard name
+                        Positioned(
+                          left: 48,
+                          top: 129,
+                          child: Text(
+                            'Cardboard',
+                            style: TextStyle(
+                              color: Color(0xFF010900),
+                              fontSize: 12,
+                              fontFamily: 'Proxima Nova',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+
+                        // Bottles name
+                        Positioned(
+                          left: 162,
+                          top: 129,
+                          child: Text(
+                            'Bottles',
+                            style: TextStyle(
+                              color: Color(0xFF010900),
+                              fontSize: 12,
+                              fontFamily: 'Proxima Nova',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+
+                        // Cans name
+                        Positioned(
+                          left: 271,
+                          top: 129,
+                          child: Text(
+                            'Cans',
+                            style: TextStyle(
+                              color: Color(0xFF010900),
+                              fontSize: 12,
+                              fontFamily: 'Proxima Nova',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
+
+              // WEEKLY CHALLENGE SECTION //
               Positioned(
-                //highlight homepage
-                left: 12,
-                top: 605,
-                child: Opacity(
-                  opacity: 0.60,
+                  left: 25,
+                  top: 398,
+
+                  // Section Title
                   child: Container(
-                    width: 68,
-                    height: 68,
-                    decoration: ShapeDecoration(
-                      color: Color(0xFFE8FAD3),
-                      shape: OvalBorder(),
+                    width: 361,
+                    height: 150,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: 0,
+                          top: 0,
+                          child: Text(
+                            'Weekly Challenge',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 25,
+                              fontFamily: 'Proxima Nova',
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+
+                        //Section bg
+                        Positioned(
+                          left: 0,
+                          top: 44,
+                          child: Container(
+                            width: 361,
+                            height: 106,
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  left: 0,
+                                  top: 0,
+                                  child: Container(
+                                    width: 361,
+                                    height: 106,
+                                    decoration: ShapeDecoration(
+                                      color: Color(0xFFE8FAD3),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+
+                                // Weekly objective
+                                Positioned(
+                                  left: 24,
+                                  top: 20,
+                                  child: Text(
+                                    'Repurpose 5 glass jars',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                      fontFamily: 'Proxima Nova',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+
+                                // Week's progress: 3/5 jars
+                                Positioned(
+                                  left: 26,
+                                  top: 46,
+                                  child: Text(
+                                    '3/5 jars',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                      fontFamily: 'Proxima Nova',
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 0.90,
+                                    ),
+                                  ),
+                                ),
+
+                                // Shadow
+                                Positioned(
+                                  left: 284,
+                                  top: 85,
+                                  child: Container(
+                                    width: 40,
+                                    height: 5,
+                                    decoration: ShapeDecoration(
+                                      color: Color(0x99010900),
+                                      shape: OvalBorder(),
+                                    ),
+                                  ),
+                                ),
+
+                                // Jars
+                                Positioned(
+                                  left: 271,
+                                  top: 15,
+                                  child: Container(
+                                    width: 73,
+                                    height: 75,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image:
+                                            AssetImage('assets/home/jars.png'),
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+
+                                // Progress bar
+                                Positioned(
+                                  left: 26,
+                                  top: 74,
+                                  child: Container(
+                                    width: 251,
+                                    height: 12,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/home/progress_bar.png'),
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
+
+              ////                  NAV BAR                     ////
+              // Navbar bg
+              Stack(
+                children: [
+                  Align(
+                    alignment: AlignmentDirectional.bottomCenter,
+                    child: Container(
+                      width: 405,
+                      height: 87,
+                      decoration: ShapeDecoration(
+                        color: Color(0xFFFCFFFB),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        shadows: [
+                          BoxShadow(
+                            color: Color(0xFFE6E6E6),
+                            blurRadius: 30,
+                            offset: Offset(0, -1),
+                            spreadRadius: 1,
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ),
 
-              Positioned(
-                // "Home" label
-                left: 22,
-                top: 645,
-                child: Text(
-                  'Home',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontFamily: 'Proxima Nova',
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-
-              Positioned(
-                //Home icon
-                left: 26,
-                top: 610,
-                child: Opacity(
-                  opacity: 1.0,
-                  child: Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/navbar/home_icon.png'),
-                        fit: BoxFit.fill,
+                  Positioned(
+// Scan button
+                    left: 162,
+                    top: 555,
+                    child: Container(
+                      width: 80,
+                      height: 80,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            left: 0,
+                            top: 0,
+                            child: Container(
+                              width: 80,
+                              height: 80,
+                              decoration: ShapeDecoration(
+                                color: Color(0xFF94E74A),
+                                shape: OvalBorder(),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+// recycle scan icon
+                            left: 17,
+                            top: 17,
+                            child: Container(
+                              width: 46,
+                              height: 46,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/navbar/recycle_scan.png'),
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                ),
-              ),
 
-              Positioned(
-                //guide icon
-                left: 106,
-                top: 620,
-                child: Opacity(
-                  opacity: 1.0,
-                  child: Container(
-                    width: 36,
-                    height: 36,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/navbar/guide_icon.png'),
-                        fit: BoxFit.fill,
+//highlight homepage
+                  Positioned(
+                    left: 12,
+                    top: 605,
+                    child: Opacity(
+                      opacity: 0.60,
+                      child: Container(
+                        width: 68,
+                        height: 68,
+                        decoration: ShapeDecoration(
+                          color: Color(0xFFE8FAD3),
+                          shape: OvalBorder(),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
 
-              Positioned(
-                //map icon
-                left: 262,
-                top: 620,
-                child: Opacity(
-                  opacity: 1.0,
-                  child: Container(
-                    width: 36,
-                    height: 36,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/navbar/map_icon.png'),
-                        fit: BoxFit.fill,
+// "Home" label
+                  Positioned(
+                    left: 22,
+                    top: 645,
+                    child: Text(
+                      'Home',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontFamily: 'Proxima Nova',
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
-                ),
-              ),
 
-              Positioned(
-                //redeem icon
-                left: 338,
-                top: 620,
-                child: Opacity(
-                  opacity: 1.0,
-                  child: Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/navbar/redeem_icon.png'),
-                        fit: BoxFit.fill,
+//Home icon
+                  Positioned(
+                    left: 26,
+                    top: 610,
+                    child: Opacity(
+                      opacity: 1.0,
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/navbar/home_icon.png'),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
+                  Positioned(
+//guide icon
+                    left: 106,
+                    top: 620,
+                    child: Opacity(
+                      opacity: 1.0,
+                      child: Container(
+                        width: 36,
+                        height: 36,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/navbar/guide_icon.png'),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+//map icon
+                    left: 262,
+                    top: 620,
+                    child: Opacity(
+                      opacity: 1.0,
+                      child: Container(
+                        width: 36,
+                        height: 36,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/navbar/map_icon.png'),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+//redeem icon
+                    left: 338,
+                    top: 620,
+                    child: Opacity(
+                      opacity: 1.0,
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/navbar/redeem_icon.png'),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
