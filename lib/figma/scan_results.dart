@@ -387,3 +387,4 @@ class ScanResults extends StatelessWidget {
     );
   }
 }
+

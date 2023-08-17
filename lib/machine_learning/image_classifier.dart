@@ -73,36 +73,6 @@ class Classifier {
         .map((label) => label.substring(label.indexOf(' ')).trim())
         .toList();
 
-    /*
-      Sample item in the label text file:
-      item {
-        id: 1
-        name: "hdpe"
-        display_name: "High-density polyethylene"
-      }
-     */
-    /*
-    final lines = await FileUtil.loadLabels(labelsFileName);
-
-    // Merge lines to reconstruct items.
-    final List<String> itemsStrings = [];
-    StringBuffer buffer = StringBuffer();
-    for (var line in lines) {
-      if (line.trim() == "}") {
-        buffer.writeln(line);
-        itemsStrings.add(buffer.toString());
-        buffer.clear();
-      } else {
-        buffer.writeln(line);
-      }
-    }
-
-    // Deserialize each item and extract the display names.
-    final labels = itemsStrings
-        .map((itemString) => LabelItem.fromJson(jsonDecode(itemString)).displayName)
-        .toList();
-     */
-
     debugPrint('Labels: $labels');
     return labels;
   }
