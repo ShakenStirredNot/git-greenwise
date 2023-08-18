@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'app.dart';
+import 'recycling_guide.dart';
 
 class HomeApp extends StatelessWidget {
   const HomeApp({super.key});
@@ -713,23 +714,30 @@ class Home extends StatelessWidget {
               ), //Home icon
 
               Positioned(
-                //guide icon
+                // guide icon
                 left: 106,
                 top: 620,
-                child: Opacity(
-                  opacity: 1.0,
-                  child: Container(
-                    width: 36,
-                    height: 36,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/navbar/guide_icon.png'),
-                        fit: BoxFit.fill,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => GuideApp()),
+                    );
+                  },
+                  child: Opacity(
+                    opacity: 1.0,
+                    child: Container(
+                      width: 36,
+                      height: 36,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/navbar/guide_icon.png'),
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ), //Guide icon
+              ),
 
               Positioned(
                 //map icon
