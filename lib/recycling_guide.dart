@@ -32,11 +32,11 @@ class RecyclingGuideApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Column(
+    return ListView(
       children: [
         Container(
           width: 411,    //411
-          height: 720,   //731
+          height: 750,   //731
           padding: const EdgeInsets.only(top: 30, left: 3, right: 3),
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(),
