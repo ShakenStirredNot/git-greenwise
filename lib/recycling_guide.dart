@@ -429,7 +429,7 @@ class RecyclingGuideApp extends StatelessWidget {
               const SizedBox(height: 20),
               Container(
                 width: double.infinity,
-                height: 150,  //150
+                height: 300,  //150
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -473,7 +473,7 @@ class RecyclingGuideApp extends StatelessWidget {
                               );
                             },
                             child: Align(
-                              alignment: Alignment(0, 0.1), // Centered at the bottom
+                              alignment: Alignment(0, 1.7), // Centered at the bottom
                               child: Container(
                                 width: 80,    //80
                                 height: 80,    //80
