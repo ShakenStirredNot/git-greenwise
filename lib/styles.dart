@@ -9,9 +9,9 @@ const gBaseTextStyle = TextStyle(
   fontFamily: gMainFont,
   fontSize: 20.0,
   color: Colors.black,
-  fontWeight: FontWeight.w600,
-  decoration: TextDecoration.none,
-);
+  fontWeight: FontWeight.w700,
+  height: 1.20,
+  decoration: TextDecoration.none);
 
 const gTitleTextStyle = TextStyle(
     fontFamily: gMainFont,
