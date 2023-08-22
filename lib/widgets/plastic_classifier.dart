@@ -121,10 +121,10 @@ class _PlasticClassifierState extends State<PlasticClassifier> {
       child: Container(
         width: 300,
         height: 50,
-        color: gLightGreen,
+        color: Color(0xFF94E74A),
         child: Center(
             child: Text(title,
-                style: gButtonTextStyle)),
+                style: gBaseTextStyle)),
       ),
     );
   }

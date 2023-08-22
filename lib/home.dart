@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../styles.dart';
 import 'app.dart';
 import 'recycling_guide.dart';
 
@@ -47,12 +48,7 @@ class Home extends StatelessWidget {
                         top: 22,
                         child: Text(
                           'Let’s get recycling!',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 25,
-                            fontFamily: 'Proxima Nova',
-                            fontWeight: FontWeight.w600,
-                          ),
+                          style: gBaseTextStyle.copyWith(fontSize: 25.0)
                         ),
                       ),
                       Positioned(
@@ -60,12 +56,7 @@ class Home extends StatelessWidget {
                         top: 4,
                         child: Text(
                           'Welcome back, Sarah',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontFamily: 'Proxima Nova',
-                            fontWeight: FontWeight.w400,
-                          ),
+                          style: gSmallTextStyle.copyWith(fontWeight: FontWeight.w400),
                         ),
                       ),
                       Positioned(
@@ -115,12 +106,7 @@ class Home extends StatelessWidget {
                         top: 5.05,
                         child: Text(
                           '300',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontFamily: 'Proxima Nova',
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: gSmallTextStyle,
                         ),
                       ),
                     ],
@@ -168,12 +154,7 @@ class Home extends StatelessWidget {
                                 top: 22,
                                 child: Text(
                                   'Earn',
-                                  style: TextStyle(
-                                    color: Color(0xFF3C9040),
-                                    fontSize: 20,
-                                    fontFamily: 'Proxima Nova',
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                                  style: gBaseTextStyle.copyWith(color: Color(0xFF3C9040)),
                                 ),
                               ),
                               Positioned(
@@ -259,12 +240,7 @@ class Home extends StatelessWidget {
                                 top: 22,
                                 child: Text(
                                   'Redeem',
-                                  style: TextStyle(
-                                    color: Color(0xFF3C9040),
-                                    fontSize: 20,
-                                    fontFamily: 'Proxima Nova',
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                                  style: gBaseTextStyle.copyWith(color: Color(0xFF3C9040)),
                                 ),
                               ),
                               Positioned(
