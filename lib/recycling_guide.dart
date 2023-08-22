@@ -11,7 +11,7 @@ class GuideApp extends StatelessWidget {
       textDirection: TextDirection.ltr,
       child: MaterialApp(
         home: Scaffold(
-          appBar: AppBar(
+          /*appBar: AppBar(
             backgroundColor: gLightGreen,
             leading: IconButton(
               icon: Icon(Icons.close, color: Colors.black),
@@ -19,32 +19,25 @@ class GuideApp extends StatelessWidget {
                 Navigator.pop(context); // Close the scanning page
               },
             ),
-          ),
+          ),*/
           body: RecyclingGuideApp(),
         ),
       ),
     );
   }
 }
-
 class RecyclingGuideApp extends StatelessWidget {
-  const RecyclingGuideApp({super.key});
   @override
   Widget build(BuildContext context) {
-
-    return ListView(
+    return Column(
       children: [
-        Container(
-          width: 411,    //411
-          height: 750,   //731
-          padding: const EdgeInsets.only(top: 30, left: 3, right: 3),
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(),
+        Padding(
+          padding: const EdgeInsets.only(top: 50, left: 3, right: 3, bottom: 0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              // Your content here
               Container(
                 width: 352,     //352
                 height: 534,    //534
@@ -57,9 +50,9 @@ class RecyclingGuideApp extends StatelessWidget {
                       'Recycling Guide',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 30,
+                        fontSize: 25,
                         fontFamily: 'Proxima Nova',
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         height: 1.40,
                       ),
                     ),
@@ -427,27 +420,27 @@ class RecyclingGuideApp extends StatelessWidget {
                 ),
               ), //up to and including city guidelines
               const SizedBox(height: 20),
+
+              // Navigation bar
               Container(
                 width: double.infinity,
-                height: 300,  //150
                 child: Row(
-                  mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    // Your navigation bar content here
                     Container(
                       width: 405,    //405
-                      height: 87,     //127
+                      height: 87,  //87   //127
                       child: Stack(
                         children: [
 
                           Positioned(
                             // Navbar bg
                             left: 0,
-                            top: 40,
+                            top: 20,
                             child: Container(
                               width: 405,
-                              height: 87,
+                              height: MediaQuery.of(context).size.height - 40,    //87
                               decoration: ShapeDecoration(
                                 color: Color(0xFFE8FAD3),
                                 shape: RoundedRectangleBorder(
@@ -473,10 +466,10 @@ class RecyclingGuideApp extends StatelessWidget {
                               );
                             },
                             child: Align(
-                              alignment: Alignment(0, 1.7), // Centered at the bottom
+                              alignment: Alignment(0, 1.9), // Centered at the bottom
                               child: Container(
                                 width: 80,    //80
-                                height: 80,    //80
+                                height: 100,    //80
                                 child: Stack(
                                   children: [
                                     Container(
@@ -511,7 +504,7 @@ class RecyclingGuideApp extends StatelessWidget {
                           Positioned(
                             // Home icon
                             left: 26,
-                            top: 620,
+                            top: 40,
                             child: GestureDetector(
                               onTap: () {
                                 Navigator.of(context).push(
@@ -535,8 +528,8 @@ class RecyclingGuideApp extends StatelessWidget {
                           ), //Home icon
                           Positioned(
                             // "Guide" label
-                            left: 22,
-                            top: 645,
+                            left: 100,
+                            top: 65,
                             child: Text(
                               'Guide',
                               textAlign: TextAlign.center,
@@ -553,7 +546,7 @@ class RecyclingGuideApp extends StatelessWidget {
                           Positioned(
                             // guide icon
                             left: 106,
-                            top: 610,
+                            top: 30,
                             child: GestureDetector(
                               onTap: () {
                                 Navigator.of(context).push(
@@ -579,7 +572,7 @@ class RecyclingGuideApp extends StatelessWidget {
                           Positioned(
                             //map icon
                             left: 262,
-                            top: 620,
+                            top: 40,
                             child: Opacity(
                               opacity: 1.0,
                               child: Container(
@@ -598,7 +591,7 @@ class RecyclingGuideApp extends StatelessWidget {
                           Positioned(
                             //redeem icon
                             left: 338,
-                            top: 620,
+                            top: 40,
                             child: Opacity(
                               opacity: 1.0,
                               child: Container(
@@ -619,7 +612,7 @@ class RecyclingGuideApp extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),   //Navigation bar/nav bar
+              ),
             ],
           ),
         ),
